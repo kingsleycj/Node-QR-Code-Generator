@@ -20,10 +20,10 @@ app.post('/', (req, res) => {
 			if(err){res.send(err); console.log(err);}
 			var file_path = "store/"+ Date.now() +".png";
 			qr_code.toFile(file_path,url, {
-			  color: {
+			    color: {
 			    dark: '#000',  // Black dots
 			    light: '#0000' // Transparent background
-			  }
+			    }
 			});
 			res.render('index',{QR_code:src,img_src:file_path}); 
 		});
